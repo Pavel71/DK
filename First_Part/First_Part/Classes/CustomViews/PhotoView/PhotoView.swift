@@ -57,6 +57,8 @@ class PhotoView: UIView {
         plusView.tintColor = #colorLiteral(red: 0.2980392157, green: 0.4588235294, blue: 0.6392156863, alpha: 1)
         plusView.image = UIImage(named: "add")
         
+        
+        
      
         
         // Добавляем нашу картинку в stackview
@@ -110,7 +112,7 @@ extension PhotoView {
             
             view.layer.borderColor = #colorLiteral(red: 0.9450980392, green: 0.9450980392, blue: 0.9450980392, alpha: 1)
             view.layer.borderWidth = 1
-            view.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            view.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
             
         }
         
