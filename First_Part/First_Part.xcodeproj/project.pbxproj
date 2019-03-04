@@ -31,6 +31,9 @@
 		F1E97501222D2EE20027C247 /* HeaderTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E97500222D2EE20027C247 /* HeaderTitleView.xib */; };
 		F1E97508222D31A80027C247 /* SexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E97506222D31A80027C247 /* SexTableViewCell.swift */; };
 		F1E97509222D31A80027C247 /* SexTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E97507222D31A80027C247 /* SexTableViewCell.xib */; };
+		F1E9750B222D506E0027C247 /* CellHeaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9750A222D506E0027C247 /* CellHeaderProtocol.swift */; };
+		F1E97511222D718B0027C247 /* BirthdayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9750F222D718B0027C247 /* BirthdayTableViewCell.swift */; };
+		F1E97512222D718B0027C247 /* BirthdayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E97510222D718B0027C247 /* BirthdayTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		F1E97500222D2EE20027C247 /* HeaderTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTitleView.xib; sourceTree = "<group>"; };
 		F1E97506222D31A80027C247 /* SexTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexTableViewCell.swift; sourceTree = "<group>"; };
 		F1E97507222D31A80027C247 /* SexTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SexTableViewCell.xib; sourceTree = "<group>"; };
+		F1E9750A222D506E0027C247 /* CellHeaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeaderProtocol.swift; sourceTree = "<group>"; };
+		F1E9750F222D718B0027C247 /* BirthdayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayTableViewCell.swift; sourceTree = "<group>"; };
+		F1E97510222D718B0027C247 /* BirthdayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirthdayTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +220,7 @@
 				F1A2DF0822281452003AB693 /* NibLoadable.swift */,
 				F1A2DF16222828B4003AB693 /* HeightContainable.swift */,
 				F1A2DF1822282923003AB693 /* TypeAliases.swift */,
+				F1E9750A222D506E0027C247 /* CellHeaderProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -229,10 +236,9 @@
 		F1A2DF0D22282065003AB693 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F1A2DF0E222820AE003AB693 /* UserInfoTableViewCell.swift */,
-				F1A2DF0F222820AE003AB693 /* UserInfoTableViewCell.xib */,
-				F1E97506222D31A80027C247 /* SexTableViewCell.swift */,
-				F1E97507222D31A80027C247 /* SexTableViewCell.xib */,
+				F1E9750C222D677E0027C247 /* UserInfoCell */,
+				F1E9750D222D67980027C247 /* SexCell */,
+				F1E9750E222D71320027C247 /* BirthdayCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -252,6 +258,33 @@
 				F1E97500222D2EE20027C247 /* HeaderTitleView.xib */,
 			);
 			path = HederTitleView;
+			sourceTree = "<group>";
+		};
+		F1E9750C222D677E0027C247 /* UserInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				F1A2DF0E222820AE003AB693 /* UserInfoTableViewCell.swift */,
+				F1A2DF0F222820AE003AB693 /* UserInfoTableViewCell.xib */,
+			);
+			path = UserInfoCell;
+			sourceTree = "<group>";
+		};
+		F1E9750D222D67980027C247 /* SexCell */ = {
+			isa = PBXGroup;
+			children = (
+				F1E97506222D31A80027C247 /* SexTableViewCell.swift */,
+				F1E97507222D31A80027C247 /* SexTableViewCell.xib */,
+			);
+			path = SexCell;
+			sourceTree = "<group>";
+		};
+		F1E9750E222D71320027C247 /* BirthdayCell */ = {
+			isa = PBXGroup;
+			children = (
+				F1E9750F222D718B0027C247 /* BirthdayTableViewCell.swift */,
+				F1E97510222D718B0027C247 /* BirthdayTableViewCell.xib */,
+			);
+			path = BirthdayCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E97512222D718B0027C247 /* BirthdayTableViewCell.xib in Resources */,
 				F1A2DEE92227BA1B003AB693 /* LaunchScreen.storyboard in Resources */,
 				F1A2DEF12227BCE6003AB693 /* ViewController.xib in Resources */,
 				F1E97501222D2EE20027C247 /* HeaderTitleView.xib in Resources */,
@@ -382,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E97511222D718B0027C247 /* BirthdayTableViewCell.swift in Sources */,
 				F1A2DF1922282923003AB693 /* TypeAliases.swift in Sources */,
 				F1A2DF1522282693003AB693 /* RegisterCellModul.swift in Sources */,
 				F1E974FF222D2ECE0027C247 /* HeaderTtileView.swift in Sources */,
@@ -391,6 +426,7 @@
 				F1A2DF10222820AE003AB693 /* UserInfoTableViewCell.swift in Sources */,
 				F1A2DEF82227C025003AB693 /* Router.swift in Sources */,
 				F1A2DF17222828B4003AB693 /* HeightContainable.swift in Sources */,
+				F1E9750B222D506E0027C247 /* CellHeaderProtocol.swift in Sources */,
 				F1A2DF04222813F9003AB693 /* PhotoView.swift in Sources */,
 				F1A2DF0922281452003AB693 /* NibLoadable.swift in Sources */,
 				F1A2DEDF2227BA19003AB693 /* AppDelegate.swift in Sources */,
