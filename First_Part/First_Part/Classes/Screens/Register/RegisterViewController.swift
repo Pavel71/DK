@@ -18,6 +18,7 @@ class RegisterViewController: UIViewController {
   private weak var sexSegment: UISegmentedControl!
   private weak var emailTextField: UITextField!
   private weak var passwordTextField: UITextField!
+  private var registerModel = RegisterModel()
   
   private var models: [HeaderModels] = [.info, .sex, .birthday]
   
@@ -38,8 +39,27 @@ class RegisterViewController: UIViewController {
     
     
     configureDatePickerView()
+    addRightBarButton()
     
   }
+  
+  private func addRightBarButton() {
+    
+    // Создаем кнопку и срзу на нее прописываем target
+    let barButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(rightBarButtonClicked))
+    
+    navigationItem.rightBarButtonItem = barButton
+  }
+  
+  @objc private func rightBarButtonClicked(sender: UIBarButtonItem) {
+    
+    guard registerModel.isFilled else {
+      showAlert(with: "Ошибка", and: "Пожалуйста заполните все поля")
+      return
+    }
+  }
+  
+  
   
   private func configureDatePickerView() {
     
@@ -49,7 +69,7 @@ class RegisterViewController: UIViewController {
   
   @objc private func datePickerChanged(sender: UIDatePicker) {
     let date = sender.date
-    print(date)
+    registerModel.birthday = date
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -90,6 +110,12 @@ class RegisterViewController: UIViewController {
     tableView.dataSource = self
   }
   
+  private func photoViewClicked() {
+    
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.delegate = self
+  }
+  
   private func registerCells() {
     
     tableView.register(UserInfoTableViewCell.nib, forCellReuseIdentifier: UserInfoTableViewCell.name)
@@ -107,6 +133,26 @@ class RegisterViewController: UIViewController {
   }
   
   
+}
+
+// MARK: UINavigationControllerDelegate
+
+extension RegisterViewController: UINavigationControllerDelegate {
+  
+}
+
+// MARK: UIImagePickerViewController
+
+extension RegisterViewController: UIImagePickerControllerDelegate {
+  
+  // Метод который откроет фотки
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    
+    guard let image = info[UIImagePickerController.InfoKey.originalImage] else {
+      fatalError("Нет картинки")
+    }
+    
+  }
 }
 
 
@@ -198,6 +244,7 @@ extension RegisterViewController: UITableViewDataSource {
     return models[section].cellModel.count
   }
   
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let model = models[indexPath.section].cellModel[indexPath.row]
@@ -206,6 +253,11 @@ extension RegisterViewController: UITableViewDataSource {
       
     case.userInfo:
       if let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoTableViewCell.name, for: indexPath) as? UserInfoTableViewCell {
+        
+        // Здесь мы цепочками через замыкание передаем код на исполнение
+        // Теперь эта ячейка имеет блок кода который исполнится при нажатие на нее в этом контроллере
+        
+        cell.photoViewClicked = photoViewClicked
         return cell
       }
       

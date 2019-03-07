@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4AB43C960A6098584470D282 /* Pods_First_Part.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */; };
+		F18170EC223125840001A593 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18170EB223125840001A593 /* RegisterModel.swift */; };
+		F18170EE223125E50001A593 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18170ED223125E50001A593 /* Sex.swift */; };
+		F18170F0223128470001A593 /* Extension+UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18170EF223128470001A593 /* Extension+UiViewController.swift */; };
 		F1A2DEDF2227BA19003AB693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2DEDE2227BA19003AB693 /* AppDelegate.swift */; };
 		F1A2DEE12227BA19003AB693 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2DEE02227BA19003AB693 /* ViewController.swift */; };
 		F1A2DEE62227BA1B003AB693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1A2DEE52227BA1B003AB693 /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 		4050AE4B1186A068B8E7FC5B /* Pods-First_Part.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First_Part.debug.xcconfig"; path = "Target Support Files/Pods-First_Part/Pods-First_Part.debug.xcconfig"; sourceTree = "<group>"; };
 		4CC4865FFC4B9206877ADDED /* Pods-First_Part.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First_Part.release.xcconfig"; path = "Target Support Files/Pods-First_Part/Pods-First_Part.release.xcconfig"; sourceTree = "<group>"; };
 		95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_First_Part.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18170EB223125840001A593 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		F18170ED223125E50001A593 /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
+		F18170EF223128470001A593 /* Extension+UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UiViewController.swift"; sourceTree = "<group>"; };
 		F1A2DEDB2227BA19003AB693 /* First_Part.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = First_Part.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A2DEDE2227BA19003AB693 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1A2DEE02227BA19003AB693 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +103,16 @@
 				4CC4865FFC4B9206877ADDED /* Pods-First_Part.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F18170EA2231256A0001A593 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F18170EB223125840001A593 /* RegisterModel.swift */,
+				F18170ED223125E50001A593 /* Sex.swift */,
+			);
+			name = Models;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		F1A2DED22227BA19003AB693 = {
@@ -159,6 +175,7 @@
 		F1A2DEF52227BFCF003AB693 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F18170EA2231256A0001A593 /* Models */,
 				F1A2DEDE2227BA19003AB693 /* AppDelegate.swift */,
 				F1A2DF1222282659003AB693 /* Models */,
 				F1A2DF0A22281B8B003AB693 /* Extensions */,
@@ -200,7 +217,6 @@
 			children = (
 				F1E974FB222D2E7A0027C247 /* HederTitleView */,
 				F1A2DF0D22282065003AB693 /* Cells */,
-				F1A2DF02222813D9003AB693 /* PhotoView */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -229,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				F1A2DF0B22281BA7003AB693 /* Extension+UiVew.swift */,
+				F18170EF223128470001A593 /* Extension+UiViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -265,6 +282,7 @@
 			children = (
 				F1A2DF0E222820AE003AB693 /* UserInfoTableViewCell.swift */,
 				F1A2DF0F222820AE003AB693 /* UserInfoTableViewCell.xib */,
+				F1A2DF02222813D9003AB693 /* PhotoView */,
 			);
 			path = UserInfoCell;
 			sourceTree = "<group>";
@@ -424,11 +442,14 @@
 				F1A2DEE12227BA19003AB693 /* ViewController.swift in Sources */,
 				F1A2DEFF222812E9003AB693 /* RegisterViewController.swift in Sources */,
 				F1A2DF10222820AE003AB693 /* UserInfoTableViewCell.swift in Sources */,
+				F18170EE223125E50001A593 /* Sex.swift in Sources */,
+				F18170F0223128470001A593 /* Extension+UiViewController.swift in Sources */,
 				F1A2DEF82227C025003AB693 /* Router.swift in Sources */,
 				F1A2DF17222828B4003AB693 /* HeightContainable.swift in Sources */,
 				F1E9750B222D506E0027C247 /* CellHeaderProtocol.swift in Sources */,
 				F1A2DF04222813F9003AB693 /* PhotoView.swift in Sources */,
 				F1A2DF0922281452003AB693 /* NibLoadable.swift in Sources */,
+				F18170EC223125840001A593 /* RegisterModel.swift in Sources */,
 				F1A2DEDF2227BA19003AB693 /* AppDelegate.swift in Sources */,
 				F1E97508222D31A80027C247 /* SexTableViewCell.swift in Sources */,
 				F1A2DEFB2227D366003AB693 /* StartRouter.swift in Sources */,

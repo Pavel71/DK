@@ -13,4 +13,4 @@ typealias StaticCellProtocol = NibLoadable & HeightContainable
 
 // Дженерик Clouser
 typealias ItemClouser<T> = ((T) -> Void)
-
+typealias VoidClouser = (() -> Void)
