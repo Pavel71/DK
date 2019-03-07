@@ -14,10 +14,13 @@ class RegisterViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var registerButton: UIButton!
   
+  
   // То что передаем из других классов
   private weak var sexSegment: UISegmentedControl!
-  private weak var emailTextField: UITextField!
-  private weak var passwordTextField: UITextField!
+  
+  private  var email = ""
+  private  var password = ""
+  
   private var registerModel = RegisterModel()
   
   private var models: [HeaderModels] = [.info, .sex, .birthday]
@@ -40,6 +43,70 @@ class RegisterViewController: UIViewController {
     
     configureDatePickerView()
     addRightBarButton()
+    
+    // Попробую передать информацию через Notification
+    
+    
+    // Устанавливаем приемник На нажатие на текстовые поля
+    NotificationCenter.default.addObserver(self, selector: #selector(textDidChangeEnd), name: Notification.Name.didTextFieldEnding, object: nil)
+    
+    // Устанавливаем приемник на нажатие на загрузить фото
+    NotificationCenter.default.addObserver(self, selector: #selector(photoViewClickedSelect), name: Notification.Name.didClickedAddPhoto, object: nil)
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    // Снять все обсерверы и тогда не будет коллизий
+    NotificationCenter.removeObserver(self, forKeyPath: Notification.Name.didTextFieldEnding.rawValue)
+  }
+  private var numb = 0
+  // Метод по обработки приемника
+  @objc func textDidChangeEnd(ncParam: NSNotification) {
+    
+    // Для примера полученные данные
+//    if let data = ncParam.userInfo as? [String: Int] {
+//      print(data)
+//    }
+//    print(ncParam)
+    
+    print(numb)
+    numb += 1
+    
+    
+    print("Notification Text Field ")
+    guard let textField = ncParam.object as? UITextField else {
+      
+      fatalError("Не получил объект")
+    }
+    
+    if let stringField = textField.text {
+      
+      switch textField.tag {
+      case 0:
+        email = stringField
+      case 1:
+        password = stringField
+        
+      default: break
+      }
+    }
+    print(email)
+    print(password)
+  }
+  
+  // Через Клоузер
+  private func workWithTextFields(textField: UITextField) {
+    
+    if let stringField = textField.text {
+      
+      switch textField.tag {
+      case 0:
+        email = stringField
+      case 1:
+        password = stringField
+        
+      default: break
+      }
+    }
     
   }
   
@@ -104,16 +171,33 @@ class RegisterViewController: UIViewController {
     
   }
   
+  // Метод срабатывает когда уходим из контроллера и преходим к другому
+  // Тогда и можно снять обсерверы
+ 
+  
   private func delegateing() {
     
     tableView.delegate = self
     tableView.dataSource = self
   }
   
+  // Notification
+  @objc func photoViewClickedSelect() {
+    
+    print("Работает Notification")
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.delegate = self
+    imagePickerController.sourceType = .photoLibrary
+    present(imagePickerController,animated: true,completion: nil)
+  }
+  
+  
   private func photoViewClicked() {
     
     let imagePickerController = UIImagePickerController()
     imagePickerController.delegate = self
+    imagePickerController.sourceType = .photoLibrary
+    present(imagePickerController,animated: true,completion: nil)
   }
   
   private func registerCells() {
@@ -148,9 +232,14 @@ extension RegisterViewController: UIImagePickerControllerDelegate {
   // Метод который откроет фотки
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     
-    guard let image = info[UIImagePickerController.InfoKey.originalImage] else {
+    picker.dismiss(animated: true, completion: nil)
+    
+    guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
       fatalError("Нет картинки")
     }
+    
+    registerModel.photo = image
+    tableView.reloadData()
     
   }
 }
@@ -254,10 +343,15 @@ extension RegisterViewController: UITableViewDataSource {
     case.userInfo:
       if let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoTableViewCell.name, for: indexPath) as? UserInfoTableViewCell {
         
-        // Здесь мы цепочками через замыкание передаем код на исполнение
-        // Теперь эта ячейка имеет блок кода который исполнится при нажатие на нее в этом контроллере
+
         
-        cell.photoViewClicked = photoViewClicked
+        // Передал ссылк из метода делегата в этот файл
+//        cell.textFieldEndEdid = workWithTextFields
+        
+        // Теперь эта ячейка имеет блок кода который исполнится при нажатие на нее в этом контроллере
+//        cell.photoViewClicked = photoViewClicked
+        
+        cell.set(image: registerModel.photo)
         return cell
       }
       

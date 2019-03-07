@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4AB43C960A6098584470D282 /* Pods_First_Part.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */; };
+		F15C9E3C22315BCB008BBCD4 /* Extension+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C9E3B22315BCB008BBCD4 /* Extension+NotificationName.swift */; };
 		F18170EC223125840001A593 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18170EB223125840001A593 /* RegisterModel.swift */; };
 		F18170EE223125E50001A593 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18170ED223125E50001A593 /* Sex.swift */; };
 		F18170F0223128470001A593 /* Extension+UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18170EF223128470001A593 /* Extension+UiViewController.swift */; };
@@ -43,6 +44,7 @@
 		4050AE4B1186A068B8E7FC5B /* Pods-First_Part.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First_Part.debug.xcconfig"; path = "Target Support Files/Pods-First_Part/Pods-First_Part.debug.xcconfig"; sourceTree = "<group>"; };
 		4CC4865FFC4B9206877ADDED /* Pods-First_Part.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First_Part.release.xcconfig"; path = "Target Support Files/Pods-First_Part/Pods-First_Part.release.xcconfig"; sourceTree = "<group>"; };
 		95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_First_Part.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F15C9E3B22315BCB008BBCD4 /* Extension+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NotificationName.swift"; sourceTree = "<group>"; };
 		F18170EB223125840001A593 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		F18170ED223125E50001A593 /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
 		F18170EF223128470001A593 /* Extension+UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UiViewController.swift"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			children = (
 				F1A2DF0B22281BA7003AB693 /* Extension+UiVew.swift */,
 				F18170EF223128470001A593 /* Extension+UiViewController.swift */,
+				F15C9E3B22315BCB008BBCD4 /* Extension+NotificationName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			files = (
 				F1E97511222D718B0027C247 /* BirthdayTableViewCell.swift in Sources */,
 				F1A2DF1922282923003AB693 /* TypeAliases.swift in Sources */,
+				F15C9E3C22315BCB008BBCD4 /* Extension+NotificationName.swift in Sources */,
 				F1A2DF1522282693003AB693 /* RegisterCellModul.swift in Sources */,
 				F1E974FF222D2ECE0027C247 /* HeaderTtileView.swift in Sources */,
 				F1A2DF0C22281BA7003AB693 /* Extension+UiVew.swift in Sources */,

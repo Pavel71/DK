@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="1" id="pop-Cm-4je"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEP-dT-F3W">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEP-dT-F3W">
                                 <rect key="frame" x="16" y="50.5" width="202.5" height="49"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -77,6 +77,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="backgroundFieldsView" destination="04I-M1-mWL" id="9MY-RS-BXM"/>
+                <outlet property="emailTextField" destination="J49-QQ-Znm" id="HdZ-Wo-Bl5"/>
+                <outlet property="passwordTextField" destination="NEP-dT-F3W" id="UiH-Mx-ao8"/>
                 <outlet property="photoView" destination="c8z-ZV-ziz" id="4f8-nr-SIx"/>
             </connections>
             <point key="canvasLocation" x="56" y="48.575712143928037"/>

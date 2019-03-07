@@ -12,10 +12,26 @@ class UserInfoTableViewCell: UITableViewCell, StaticCellProtocol {
   
   // Это View с полями для ввода Данных
   @IBOutlet weak var backgroundFieldsView: UIView!
+  
+  @IBOutlet weak var emailTextField: UITextField!
+  @IBOutlet weak var passwordTextField: UITextField!
+  
   @IBOutlet weak var photoView: PhotoView!
   // Я бы сюда добавил также и поле с Stack view!
   
-  var photoViewClicked: VoidClouser?
+  // Сейчас нужно добавить клоузер который будет передавать упарвление методу делегату при заканчивание писание текста в поле
+  var textFieldEndEdid: ((UITextField) -> Void)?
+  
+  // Клоузер который передает процедуру по цепочке к методу который исполняется каждый раз при нажатии на кнопку добавить фото
+  
+  
+//  var photoViewClicked: VoidClouser? {
+//    didSet {
+//      photoView.clicked = photoViewClicked
+//    }
+//  }
+  
+  
   
   static var height: CGFloat {
     return 100
@@ -27,8 +43,19 @@ class UserInfoTableViewCell: UITableViewCell, StaticCellProtocol {
     
     // Прорисовка
     Decorator.decorate(cell: self)
-    photoView.clicked = photoViewClicked
     
+    emailTextField.delegate = self
+    passwordTextField.delegate = self
+    
+    // Добавили наблюдателя и теперь когда этот метод сработает мы запросим выполнение нашей функции
+   
+    
+  }
+  
+  
+  
+  func set(image: UIImage?) {
+    photoView.set(image: image)
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -39,8 +66,33 @@ class UserInfoTableViewCell: UITableViewCell, StaticCellProtocol {
   
 }
 
+// С другой стороны нужно больше абстракций чтобы можно было применять 1 класс к любым text Fieldam
+
+// Попробовать использовать Notification Center
+
+extension UserInfoTableViewCell: UITextFieldDelegate {
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    
+    // Передам эту ссылку в другой файл чтобы там срабатывал код каждый раз как сработает этот делегат
+    textFieldEndEdid?(textField)
+    
+    // для примера
+//    let scores = ["Bob": 5, "Alice": 3, "Arthur": 42]
+    // Отправляем запрос в Диспетчер для приме информации
+    
+    NotificationCenter.default.post(name: NSNotification.Name.didTextFieldEnding, object: textField)
+    
+//
+//    NotificationCenter.default.postNotification(name: .didReceiveData, object: self, userInfo: scores)
+
+  }
+
+}
+
 // Создадим декортаор для прорисовки Нашей Ячейки
 
+// MARK: Decorator
 extension UserInfoTableViewCell {
   
   fileprivate class Decorator {

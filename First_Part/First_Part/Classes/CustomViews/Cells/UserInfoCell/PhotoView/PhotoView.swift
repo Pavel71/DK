@@ -16,8 +16,12 @@ class PhotoView: UIView {
   private let plusView = UIImageView()
   private let label = UILabel()
   
+  private let imageView = UIImageView()
+  
   var clicked: VoidClouser?
   // Я так понял это жизненый цикл UIView и у него есть свли методы когда и что лучше использовать
+  
+  // MARK: - UIView Override func
   
   override func didMoveToSuperview() {
     super.didMoveToSuperview()
@@ -27,12 +31,9 @@ class PhotoView: UIView {
     addPlusView()
     addLabel()
     
-  }
-  // Вызывается после того как произошло нажатие на эту View
-  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-    super.touchesEnded(touches, with: event)
+    addImageView()
     
-    clicked!()
+    clipsToBounds = true
     
   }
   
@@ -42,6 +43,39 @@ class PhotoView: UIView {
     Decorator.layoutSubview(self)
     Decorator.decorator(self)
   }
+  
+  // Вызывается после того как произошло нажатие на эту View
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesEnded(touches, with: event)
+    
+    NotificationCenter.default.post(name: NSNotification.Name("Загрузить Фото"), object: nil)
+    
+//    clicked?()
+    
+  }
+  
+  func set(image: UIImage?) {
+    
+    imageView.image = image
+    imageView.isHidden = image == nil
+  }
+  
+  private func addImageView() {
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    
+    imageView.isHidden = true
+    imageView.clipsToBounds = true
+    imageView.contentMode = .scaleAspectFill
+    addSubview(imageView)
+    
+    // Нужно добавить констраинты чтобы view растягивалась на все view
+    
+    imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
+    imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
+    imageView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
+    imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+  }
+  
   
   // MARK: AddLabel
   
