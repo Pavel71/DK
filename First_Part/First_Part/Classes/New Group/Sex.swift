@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum Sex {
+enum Sex: String {
   
-  case male,female
+  case male = "Мужской"
+  case female = "Женский"
 }

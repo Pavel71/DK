@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4AB43C960A6098584470D282 /* Pods_First_Part.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */; };
+		F12351C022366C4700B7C705 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12351BF22366C4700B7C705 /* AuthManager.swift */; };
+		F12351C32236703B00B7C705 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12351C22236703B00B7C705 /* Utilites.swift */; };
 		F15C9E3C22315BCB008BBCD4 /* Extension+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C9E3B22315BCB008BBCD4 /* Extension+NotificationName.swift */; };
 		F18170EC223125840001A593 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18170EB223125840001A593 /* RegisterModel.swift */; };
 		F18170EE223125E50001A593 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18170ED223125E50001A593 /* Sex.swift */; };
@@ -44,6 +46,8 @@
 		4050AE4B1186A068B8E7FC5B /* Pods-First_Part.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First_Part.debug.xcconfig"; path = "Target Support Files/Pods-First_Part/Pods-First_Part.debug.xcconfig"; sourceTree = "<group>"; };
 		4CC4865FFC4B9206877ADDED /* Pods-First_Part.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First_Part.release.xcconfig"; path = "Target Support Files/Pods-First_Part/Pods-First_Part.release.xcconfig"; sourceTree = "<group>"; };
 		95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_First_Part.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F12351BF22366C4700B7C705 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		F12351C22236703B00B7C705 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		F15C9E3B22315BCB008BBCD4 /* Extension+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NotificationName.swift"; sourceTree = "<group>"; };
 		F18170EB223125840001A593 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		F18170ED223125E50001A593 /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
@@ -105,6 +109,29 @@
 				4CC4865FFC4B9206877ADDED /* Pods-First_Part.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F12351BD2236449200B7C705 /* TextFieldsCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TextFieldsCell;
+			sourceTree = "<group>";
+		};
+		F12351BE22366C1800B7C705 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F12351BF22366C4700B7C705 /* AuthManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F12351C12236702400B7C705 /* HelpFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F12351C22236703B00B7C705 /* Utilites.swift */,
+			);
+			path = HelpFiles;
 			sourceTree = "<group>";
 		};
 		F18170EA2231256A0001A593 /* Models */ = {
@@ -177,6 +204,8 @@
 		F1A2DEF52227BFCF003AB693 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F12351C12236702400B7C705 /* HelpFiles */,
+				F12351BE22366C1800B7C705 /* Managers */,
 				F18170EA2231256A0001A593 /* Models */,
 				F1A2DEDE2227BA19003AB693 /* AppDelegate.swift */,
 				F1A2DF1222282659003AB693 /* Models */,
@@ -256,6 +285,7 @@
 		F1A2DF0D22282065003AB693 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F12351BD2236449200B7C705 /* TextFieldsCell */,
 				F1E9750C222D677E0027C247 /* UserInfoCell */,
 				F1E9750D222D67980027C247 /* SexCell */,
 				F1E9750E222D71320027C247 /* BirthdayCell */,
@@ -393,14 +423,18 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-First_Part/Pods-First_Part-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,8 +472,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E97511222D718B0027C247 /* BirthdayTableViewCell.swift in Sources */,
+				F12351C022366C4700B7C705 /* AuthManager.swift in Sources */,
 				F1A2DF1922282923003AB693 /* TypeAliases.swift in Sources */,
 				F15C9E3C22315BCB008BBCD4 /* Extension+NotificationName.swift in Sources */,
+				F12351C32236703B00B7C705 /* Utilites.swift in Sources */,
 				F1A2DF1522282693003AB693 /* RegisterCellModul.swift in Sources */,
 				F1E974FF222D2ECE0027C247 /* HeaderTtileView.swift in Sources */,
 				F1A2DF0C22281BA7003AB693 /* Extension+UiVew.swift in Sources */,

@@ -17,10 +17,30 @@ class RegisterModel {
   var birthday: Date?
   
   var isFilled: Bool {
-    guard (email ?? "").isEmpty, (password ?? "").isEmpty, birthday != nil else {
+    print(email)
+    print(password)
+    print(birthday)
+    
+    guard (email != nil), (password != nil), birthday != nil else {
       
       return false
     }
+    
+//    guard (email ?? "").isEmpty, (password ?? "").isEmpty, birthday != nil else {
+//
+//      return false
+//    }
     return true
+  }
+  
+  // Подготовим данные к отправке в базу данных
+  
+  var dict: [String: Any] {
+    return [
+      "email": email ?? "",
+      "password": password ?? "",
+      "sex": sex?.rawValue ,
+      "birthday": (birthday ?? Date()).timeIntervalSince1970
+    ]
   }
 }

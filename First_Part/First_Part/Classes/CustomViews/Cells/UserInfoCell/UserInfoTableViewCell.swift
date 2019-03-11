@@ -75,16 +75,15 @@ extension UserInfoTableViewCell: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     
     // Передам эту ссылку в другой файл чтобы там срабатывал код каждый раз как сработает этот делегат
-    textFieldEndEdid?(textField)
+//    textFieldEndEdid?(textField)
     
     // для примера
 //    let scores = ["Bob": 5, "Alice": 3, "Arthur": 42]
     // Отправляем запрос в Диспетчер для приме информации
     
-    NotificationCenter.default.post(name: NSNotification.Name.didTextFieldEnding, object: textField)
+//    NotificationCenter.default.post(name:.didTextFieldEnding, object: nil)
     
-//
-//    NotificationCenter.default.postNotification(name: .didReceiveData, object: self, userInfo: scores)
+     /// Все я разобрался запрос дублируется так как он системный но можно сделать его самостоятельбным и с доп материалами тогда дублироватся не будет!
 
   }
 
