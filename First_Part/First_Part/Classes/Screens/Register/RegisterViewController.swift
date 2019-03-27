@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ARSLineProgress
 
 class RegisterViewController: UIViewController {
   
@@ -55,8 +56,7 @@ class RegisterViewController: UIViewController {
   }
   
   override func viewWillDisappear(_ animated: Bool) {
-    // Снять все обсерверы и тогда не будет коллизий
-    NotificationCenter.removeObserver(self, forKeyPath: Notification.Name.didTextFieldEnding.rawValue)
+
   }
 
   // MARK: Notification method
@@ -199,7 +199,7 @@ class RegisterViewController: UIViewController {
   // Notification
   @objc func photoViewClickedSelect() {
     
-    print("Работает Notification")
+    print("Работает Notification Photo")
     let imagePickerController = UIImagePickerController()
     imagePickerController.delegate = self
     imagePickerController.sourceType = .photoLibrary
@@ -218,9 +218,7 @@ class RegisterViewController: UIViewController {
   private func registerCells() {
     
     tableView.register(UserInfoTableViewCell.nib, forCellReuseIdentifier: UserInfoTableViewCell.name)
-    
     tableView.register(SexTableViewCell.nib, forCellReuseIdentifier: SexTableViewCell.name)
-    
     tableView.register(BirthdayTableViewCell.nib, forCellReuseIdentifier: BirthdayTableViewCell.name)
   }
   
@@ -272,6 +270,11 @@ extension RegisterViewController: UIImagePickerControllerDelegate {
     
     registerModel.photo = image
     tableView.reloadData()
+    ARSLineProgress.show()
+    StoregeManager.shared.uploadPhoto(by: registerModel) {
+      print("Загрузка фотки в Firebase")
+      ARSLineProgress.hide()
+    }
     
   }
 }

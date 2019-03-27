@@ -15,21 +15,15 @@ class RegisterModel {
   var password: String?
   var sex: Sex?
   var birthday: Date?
+  var userID: String
   
   var isFilled: Bool {
-    print(email)
-    print(password)
-    print(birthday)
     
     guard (email != nil), (password != nil), birthday != nil else {
       
       return false
     }
-    
-//    guard (email ?? "").isEmpty, (password ?? "").isEmpty, birthday != nil else {
-//
-//      return false
-//    }
+
     return true
   }
   
@@ -42,5 +36,10 @@ class RegisterModel {
       "sex": sex?.rawValue ,
       "birthday": (birthday ?? Date()).timeIntervalSince1970
     ]
+  }
+  
+  init() {
+    
+    self.userID = UUID.init().uuidString
   }
 }

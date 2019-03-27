@@ -23,6 +23,11 @@ class AuthManager {
     
   }
   
+  private var userRef: DatabaseReference {
+    
+    return sourceRef.child("users")
+  }
+  
   private let auth = Auth.auth()
   
   
@@ -36,22 +41,34 @@ class AuthManager {
     guard let email = model.email, let password = model.password else {
       return
     }
-    
-    let usersRef = sourceRef.child("users")
-    
-    // Можно использовать id
-//    let id = UUID.init().uuidString
+
     
     // Мой ID
-    let id = ID()
+    let id = model.userID
     print("ID - \(id)")
     print("Создаю User")
     auth.createUser(withEmail: email, password: password) { (result, error) in
       var dict = model.dict
       dict["id"] = id
-      usersRef.child(id).setValue(dict)
+      self.userRef.child(id).setValue(dict, withCompletionBlock: { (error, reference) in
+        self.addAvatarUrlIFNedeed(for: model)
+      })
       
     }
     completition()
   }
+  
+  func addAvatarUrlIFNedeed(for model: RegisterModel) {
+    
+    StoregeManager.shared.loadUrl(for: model) { (url) in
+      guard let url = url else {
+        return
+      }
+      self.userRef.child(model.userID).child("avatarUrl").setValue(url.absoluteString)
+      
+      
+    }
+  }
+  
+  
 }

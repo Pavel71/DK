@@ -8,6 +8,10 @@
 
 import Foundation
 
+
+// Просто модуль с функциями!
+
+// Эта функция не нужна!
 func ID() -> String {
   
   let str = "asdasdasd0991823894123"

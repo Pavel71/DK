@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4AB43C960A6098584470D282 /* Pods_First_Part.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */; };
+		F1059F33224BBE4200ACC605 /* StoregManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F32224BBE4200ACC605 /* StoregManager.swift */; };
 		F12351C022366C4700B7C705 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12351BF22366C4700B7C705 /* AuthManager.swift */; };
 		F12351C32236703B00B7C705 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12351C22236703B00B7C705 /* Utilites.swift */; };
 		F15C9E3C22315BCB008BBCD4 /* Extension+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C9E3B22315BCB008BBCD4 /* Extension+NotificationName.swift */; };
@@ -46,6 +47,7 @@
 		4050AE4B1186A068B8E7FC5B /* Pods-First_Part.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First_Part.debug.xcconfig"; path = "Target Support Files/Pods-First_Part/Pods-First_Part.debug.xcconfig"; sourceTree = "<group>"; };
 		4CC4865FFC4B9206877ADDED /* Pods-First_Part.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First_Part.release.xcconfig"; path = "Target Support Files/Pods-First_Part/Pods-First_Part.release.xcconfig"; sourceTree = "<group>"; };
 		95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_First_Part.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1059F32224BBE4200ACC605 /* StoregManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoregManager.swift; sourceTree = "<group>"; };
 		F12351BF22366C4700B7C705 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		F12351C22236703B00B7C705 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		F15C9E3B22315BCB008BBCD4 /* Extension+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NotificationName.swift"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				F12351BF22366C4700B7C705 /* AuthManager.swift */,
+				F1059F32224BBE4200ACC605 /* StoregManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				TargetAttributes = {
 					F1A2DEDA2227BA19003AB693 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -423,6 +427,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-First_Part/Pods-First_Part-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ARSLineProgress/ARSLineProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -432,6 +437,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARSLineProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -483,6 +489,7 @@
 				F1A2DEFF222812E9003AB693 /* RegisterViewController.swift in Sources */,
 				F1A2DF10222820AE003AB693 /* UserInfoTableViewCell.swift in Sources */,
 				F18170EE223125E50001A593 /* Sex.swift in Sources */,
+				F1059F33224BBE4200ACC605 /* StoregManager.swift in Sources */,
 				F18170F0223128470001A593 /* Extension+UiViewController.swift in Sources */,
 				F1A2DEF82227C025003AB693 /* Router.swift in Sources */,
 				F1A2DF17222828B4003AB693 /* HeightContainable.swift in Sources */,
@@ -641,7 +648,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "pavel.m.First-Part";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -661,7 +668,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "pavel.m.First-Part";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
