@@ -75,7 +75,7 @@ extension UserInfoTableViewCell: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     
     // Передам эту ссылку в другой файл чтобы там срабатывал код каждый раз как сработает этот делегат
-//    textFieldEndEdid?(textField)
+//
     
     // для примера
 //    let scores = ["Bob": 5, "Alice": 3, "Arthur": 42]
@@ -84,7 +84,9 @@ extension UserInfoTableViewCell: UITextFieldDelegate {
 //    NotificationCenter.default.post(name:.didTextFieldEnding, object: nil)
     
      /// Все я разобрался запрос дублируется так как он системный но можно сделать его самостоятельбным и с доп материалами тогда дублироватся не будет!
-
+    
+    // Сейчас ставлю задачу пробросить от ячейки к контроллеру с помошью clouser
+      textFieldEndEdid?(textField)
   }
 
 }

@@ -15,3 +15,4 @@ typealias StaticCellProtocol = NibLoadable & HeightContainable
 typealias ItemClouser<T> = ((T) -> Void)
 typealias OptionalItemClouser<T> = ((T?) -> Void)
 typealias VoidClouser = (() -> Void)
+typealias ResultClouser = ((Result<String, Error>) -> Void)

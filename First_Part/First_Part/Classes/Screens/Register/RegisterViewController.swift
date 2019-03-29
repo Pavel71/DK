@@ -127,16 +127,25 @@ class RegisterViewController: UIViewController {
     navigationItem.rightBarButtonItem = barButton
   }
   
-  @objc private func rightBarButtonClicked(sender: UIBarButtonItem) {
+  @objc private func rightBarButtonClicked(sender: UIBarButtonItem) { 
     
     guard registerModel.isFilled else {
+      
       showAlert(with: "Ошибка", and: "Пожалуйста заполните все поля")
       return
     }
     
-    AuthManager.shared.register(with: registerModel) {
+    ARSLineProgress.show()
+    AuthManager.shared.register(with: registerModel) { result in
+      ARSLineProgress.hide()
       
-      showAlert(with: "Успешно", and: "Вы зарегестрированны")
+      switch result {
+      case .failure(let error):
+        self.showAlert(with: "Ошибка", and: error.localizedDescription)
+      case .success(let succses):
+        self.showAlert(with:"", and: succses)
+      }
+      
     }
 
   }
@@ -240,10 +249,10 @@ class RegisterViewController: UIViewController {
     print("День рождения \(registerModel.birthday)")
     
     
-    AuthManager.shared.register(with: registerModel) {
-      
-      showAlert(with: "Успешно", and: "Вы зарегестрированны")
-    }
+//    AuthManager.shared.register(with: registerModel) {_ in
+//
+//      showAlert(with: "Успешно", and: "Вы зарегестрированны")
+//    }
   }
   
   
@@ -381,7 +390,7 @@ extension RegisterViewController: UITableViewDataSource {
 
         
         // Передал ссылк из метода делегата в этот файл
-//        cell.textFieldEndEdid = workWithTextFields
+        cell.textFieldEndEdid = workWithTextFields
         
         // Теперь эта ячейка имеет блок кода который исполнится при нажатие на нее в этом контроллере
 //        cell.photoViewClicked = photoViewClicked

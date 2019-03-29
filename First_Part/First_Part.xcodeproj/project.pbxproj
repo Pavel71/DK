@@ -33,7 +33,10 @@
 		F1A2DF1522282693003AB693 /* RegisterCellModul.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2DF1422282693003AB693 /* RegisterCellModul.swift */; };
 		F1A2DF17222828B4003AB693 /* HeightContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2DF16222828B4003AB693 /* HeightContainable.swift */; };
 		F1A2DF1922282923003AB693 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2DF1822282923003AB693 /* TypeAliases.swift */; };
-		F1A2DF1B22293ABF003AB693 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1A2DF1A22293ABF003AB693 /* GoogleService-Info.plist */; };
+		F1C50483224CE68D0040B814 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C50481224CE68D0040B814 /* LoginViewController.swift */; };
+		F1C50484224CE68D0040B814 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1C50482224CE68D0040B814 /* LoginViewController.xib */; };
+		F1C50487224CE9010040B814 /* CustomTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C50486224CE9010040B814 /* CustomTextFields.swift */; };
+		F1C5048B224D1CA60040B814 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1C5048A224D1CA50040B814 /* GoogleService-Info.plist */; };
 		F1E974FF222D2ECE0027C247 /* HeaderTtileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E974FE222D2ECE0027C247 /* HeaderTtileView.swift */; };
 		F1E97501222D2EE20027C247 /* HeaderTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E97500222D2EE20027C247 /* HeaderTitleView.xib */; };
 		F1E97508222D31A80027C247 /* SexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E97506222D31A80027C247 /* SexTableViewCell.swift */; };
@@ -74,7 +77,10 @@
 		F1A2DF1422282693003AB693 /* RegisterCellModul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCellModul.swift; sourceTree = "<group>"; };
 		F1A2DF16222828B4003AB693 /* HeightContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightContainable.swift; sourceTree = "<group>"; };
 		F1A2DF1822282923003AB693 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
-		F1A2DF1A22293ABF003AB693 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F1C50481224CE68D0040B814 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F1C50482224CE68D0040B814 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		F1C50486224CE9010040B814 /* CustomTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFields.swift; sourceTree = "<group>"; };
+		F1C5048A224D1CA50040B814 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1E974FE222D2ECE0027C247 /* HeaderTtileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTtileView.swift; sourceTree = "<group>"; };
 		F1E97500222D2EE20027C247 /* HeaderTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTitleView.xib; sourceTree = "<group>"; };
 		F1E97506222D31A80027C247 /* SexTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexTableViewCell.swift; sourceTree = "<group>"; };
@@ -169,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				F1A2DEEA2227BA1B003AB693 /* Info.plist */,
-				F1A2DF1A22293ABF003AB693 /* GoogleService-Info.plist */,
+				F1C5048A224D1CA50040B814 /* GoogleService-Info.plist */,
 				F1A2DEF52227BFCF003AB693 /* Classes */,
 				F1A2DEF22227BF6A003AB693 /* Supporting Files */,
 			);
@@ -189,6 +195,7 @@
 		F1A2DEF32227BF86003AB693 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F1C50480224CE6700040B814 /* Login */,
 				F1A2DEFC222812C9003AB693 /* Register */,
 				F1A2DEF42227BF94003AB693 /* Start */,
 			);
@@ -249,6 +256,7 @@
 		F1A2DF01222813A8003AB693 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				F1C50485224CE8D40040B814 /* TextFields */,
 				F1E974FB222D2E7A0027C247 /* HederTitleView */,
 				F1A2DF0D22282065003AB693 /* Cells */,
 			);
@@ -302,6 +310,23 @@
 				F1A2DF1422282693003AB693 /* RegisterCellModul.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F1C50480224CE6700040B814 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F1C50481224CE68D0040B814 /* LoginViewController.swift */,
+				F1C50482224CE68D0040B814 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F1C50485224CE8D40040B814 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				F1C50486224CE9010040B814 /* CustomTextFields.swift */,
+			);
+			path = TextFields;
 			sourceTree = "<group>";
 		};
 		F1E974FB222D2E7A0027C247 /* HederTitleView */ = {
@@ -404,14 +429,15 @@
 			files = (
 				F1E97512222D718B0027C247 /* BirthdayTableViewCell.xib in Resources */,
 				F1A2DEE92227BA1B003AB693 /* LaunchScreen.storyboard in Resources */,
+				F1C50484224CE68D0040B814 /* LoginViewController.xib in Resources */,
 				F1A2DEF12227BCE6003AB693 /* ViewController.xib in Resources */,
 				F1E97501222D2EE20027C247 /* HeaderTitleView.xib in Resources */,
 				F1A2DF0622281415003AB693 /* PhotoView.xib in Resources */,
+				F1C5048B224D1CA60040B814 /* GoogleService-Info.plist in Resources */,
 				F1A2DEE62227BA1B003AB693 /* Assets.xcassets in Resources */,
 				F1E97509222D31A80027C247 /* SexTableViewCell.xib in Resources */,
 				F1A2DF11222820AE003AB693 /* UserInfoTableViewCell.xib in Resources */,
 				F1A2DF00222812E9003AB693 /* RegisterViewController.xib in Resources */,
-				F1A2DF1B22293ABF003AB693 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +515,7 @@
 				F1A2DEFF222812E9003AB693 /* RegisterViewController.swift in Sources */,
 				F1A2DF10222820AE003AB693 /* UserInfoTableViewCell.swift in Sources */,
 				F18170EE223125E50001A593 /* Sex.swift in Sources */,
+				F1C50483224CE68D0040B814 /* LoginViewController.swift in Sources */,
 				F1059F33224BBE4200ACC605 /* StoregManager.swift in Sources */,
 				F18170F0223128470001A593 /* Extension+UiViewController.swift in Sources */,
 				F1A2DEF82227C025003AB693 /* Router.swift in Sources */,
@@ -497,6 +524,7 @@
 				F1A2DF04222813F9003AB693 /* PhotoView.swift in Sources */,
 				F1A2DF0922281452003AB693 /* NibLoadable.swift in Sources */,
 				F18170EC223125840001A593 /* RegisterModel.swift in Sources */,
+				F1C50487224CE9010040B814 /* CustomTextFields.swift in Sources */,
 				F1A2DEDF2227BA19003AB693 /* AppDelegate.swift in Sources */,
 				F1E97508222D31A80027C247 /* SexTableViewCell.swift in Sources */,
 				F1A2DEFB2227D366003AB693 /* StartRouter.swift in Sources */,
