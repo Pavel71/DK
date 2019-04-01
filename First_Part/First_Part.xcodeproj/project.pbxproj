@@ -9,8 +9,20 @@
 /* Begin PBXBuildFile section */
 		4AB43C960A6098584470D282 /* Pods_First_Part.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */; };
 		F1059F33224BBE4200ACC605 /* StoregManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F32224BBE4200ACC605 /* StoregManager.swift */; };
+		F108225A225220B700D575E4 /* Extensions+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1082259225220B700D575E4 /* Extensions+Decodable.swift */; };
 		F12351C022366C4700B7C705 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12351BF22366C4700B7C705 /* AuthManager.swift */; };
 		F12351C32236703B00B7C705 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12351C22236703B00B7C705 /* Utilites.swift */; };
+		F14F6B21224DFD64001AA9D3 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14F6B1F224DFD64001AA9D3 /* FeedViewController.swift */; };
+		F14F6B22224DFD64001AA9D3 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14F6B20224DFD64001AA9D3 /* FeedViewController.xib */; };
+		F14F6B25224DFECA001AA9D3 /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14F6B24224DFECA001AA9D3 /* UserHeaderView.xib */; };
+		F14F6B27224E00A1001AA9D3 /* UserHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14F6B26224E00A1001AA9D3 /* UserHeader.swift */; };
+		F14F6B2B224E25F6001AA9D3 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14F6B29224E25F6001AA9D3 /* CreatePostViewController.swift */; };
+		F14F6B2C224E25F6001AA9D3 /* CreatePostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14F6B2A224E25F6001AA9D3 /* CreatePostViewController.xib */; };
+		F14F6B2E224E292D001AA9D3 /* Postmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14F6B2D224E292D001AA9D3 /* Postmanager.swift */; };
+		F14F6B30224E29C1001AA9D3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14F6B2F224E29C0001AA9D3 /* FirebaseManager.swift */; };
+		F14F6B32224E2C4B001AA9D3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14F6B31224E2C4B001AA9D3 /* Post.swift */; };
+		F14F6B34224E2DE0001AA9D3 /* Extensions+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14F6B33224E2DE0001AA9D3 /* Extensions+Codable.swift */; };
+		F14F6B36224E388A001AA9D3 /* SecureStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14F6B35224E388A001AA9D3 /* SecureStoreManager.swift */; };
 		F15C9E3C22315BCB008BBCD4 /* Extension+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C9E3B22315BCB008BBCD4 /* Extension+NotificationName.swift */; };
 		F18170EC223125840001A593 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18170EB223125840001A593 /* RegisterModel.swift */; };
 		F18170EE223125E50001A593 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18170ED223125E50001A593 /* Sex.swift */; };
@@ -30,7 +42,6 @@
 		F1A2DF0C22281BA7003AB693 /* Extension+UiVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2DF0B22281BA7003AB693 /* Extension+UiVew.swift */; };
 		F1A2DF10222820AE003AB693 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2DF0E222820AE003AB693 /* UserInfoTableViewCell.swift */; };
 		F1A2DF11222820AE003AB693 /* UserInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1A2DF0F222820AE003AB693 /* UserInfoTableViewCell.xib */; };
-		F1A2DF1522282693003AB693 /* RegisterCellModul.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2DF1422282693003AB693 /* RegisterCellModul.swift */; };
 		F1A2DF17222828B4003AB693 /* HeightContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2DF16222828B4003AB693 /* HeightContainable.swift */; };
 		F1A2DF1922282923003AB693 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2DF1822282923003AB693 /* TypeAliases.swift */; };
 		F1C50483224CE68D0040B814 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C50481224CE68D0040B814 /* LoginViewController.swift */; };
@@ -51,8 +62,20 @@
 		4CC4865FFC4B9206877ADDED /* Pods-First_Part.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First_Part.release.xcconfig"; path = "Target Support Files/Pods-First_Part/Pods-First_Part.release.xcconfig"; sourceTree = "<group>"; };
 		95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_First_Part.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1059F32224BBE4200ACC605 /* StoregManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoregManager.swift; sourceTree = "<group>"; };
+		F1082259225220B700D575E4 /* Extensions+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Decodable.swift"; sourceTree = "<group>"; };
 		F12351BF22366C4700B7C705 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		F12351C22236703B00B7C705 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
+		F14F6B1F224DFD64001AA9D3 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		F14F6B20224DFD64001AA9D3 /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		F14F6B24224DFECA001AA9D3 /* UserHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
+		F14F6B26224E00A1001AA9D3 /* UserHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeader.swift; sourceTree = "<group>"; };
+		F14F6B29224E25F6001AA9D3 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		F14F6B2A224E25F6001AA9D3 /* CreatePostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostViewController.xib; sourceTree = "<group>"; };
+		F14F6B2D224E292D001AA9D3 /* Postmanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Postmanager.swift; sourceTree = "<group>"; };
+		F14F6B2F224E29C0001AA9D3 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		F14F6B31224E2C4B001AA9D3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F14F6B33224E2DE0001AA9D3 /* Extensions+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Codable.swift"; sourceTree = "<group>"; };
+		F14F6B35224E388A001AA9D3 /* SecureStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStoreManager.swift; sourceTree = "<group>"; };
 		F15C9E3B22315BCB008BBCD4 /* Extension+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NotificationName.swift"; sourceTree = "<group>"; };
 		F18170EB223125840001A593 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		F18170ED223125E50001A593 /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
@@ -74,7 +97,6 @@
 		F1A2DF0B22281BA7003AB693 /* Extension+UiVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UiVew.swift"; sourceTree = "<group>"; };
 		F1A2DF0E222820AE003AB693 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		F1A2DF0F222820AE003AB693 /* UserInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoTableViewCell.xib; sourceTree = "<group>"; };
-		F1A2DF1422282693003AB693 /* RegisterCellModul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCellModul.swift; sourceTree = "<group>"; };
 		F1A2DF16222828B4003AB693 /* HeightContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightContainable.swift; sourceTree = "<group>"; };
 		F1A2DF1822282923003AB693 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		F1C50481224CE68D0040B814 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +153,9 @@
 			children = (
 				F12351BF22366C4700B7C705 /* AuthManager.swift */,
 				F1059F32224BBE4200ACC605 /* StoregManager.swift */,
+				F14F6B2D224E292D001AA9D3 /* Postmanager.swift */,
+				F14F6B2F224E29C0001AA9D3 /* FirebaseManager.swift */,
+				F14F6B35224E388A001AA9D3 /* SecureStoreManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -143,11 +168,39 @@
 			path = HelpFiles;
 			sourceTree = "<group>";
 		};
+		F14F6B1E224DFD40001AA9D3 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				F14F6B1F224DFD64001AA9D3 /* FeedViewController.swift */,
+				F14F6B20224DFD64001AA9D3 /* FeedViewController.xib */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		F14F6B23224DFEA9001AA9D3 /* User Header */ = {
+			isa = PBXGroup;
+			children = (
+				F14F6B24224DFECA001AA9D3 /* UserHeaderView.xib */,
+				F14F6B26224E00A1001AA9D3 /* UserHeader.swift */,
+			);
+			path = "User Header";
+			sourceTree = "<group>";
+		};
+		F14F6B28224E25D7001AA9D3 /* CreatePost */ = {
+			isa = PBXGroup;
+			children = (
+				F14F6B29224E25F6001AA9D3 /* CreatePostViewController.swift */,
+				F14F6B2A224E25F6001AA9D3 /* CreatePostViewController.xib */,
+			);
+			path = CreatePost;
+			sourceTree = "<group>";
+		};
 		F18170EA2231256A0001A593 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				F18170EB223125840001A593 /* RegisterModel.swift */,
 				F18170ED223125E50001A593 /* Sex.swift */,
+				F14F6B31224E2C4B001AA9D3 /* Post.swift */,
 			);
 			name = Models;
 			path = "New Group";
@@ -195,6 +248,8 @@
 		F1A2DEF32227BF86003AB693 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F14F6B28224E25D7001AA9D3 /* CreatePost */,
+				F14F6B1E224DFD40001AA9D3 /* Feed */,
 				F1C50480224CE6700040B814 /* Login */,
 				F1A2DEFC222812C9003AB693 /* Register */,
 				F1A2DEF42227BF94003AB693 /* Start */,
@@ -214,11 +269,10 @@
 		F1A2DEF52227BFCF003AB693 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F1A2DEDE2227BA19003AB693 /* AppDelegate.swift */,
 				F12351C12236702400B7C705 /* HelpFiles */,
 				F12351BE22366C1800B7C705 /* Managers */,
 				F18170EA2231256A0001A593 /* Models */,
-				F1A2DEDE2227BA19003AB693 /* AppDelegate.swift */,
-				F1A2DF1222282659003AB693 /* Models */,
 				F1A2DF0A22281B8B003AB693 /* Extensions */,
 				F1A2DF072228142E003AB693 /* Protocols */,
 				F1A2DEF62227BFFF003AB693 /* Routers */,
@@ -256,6 +310,7 @@
 		F1A2DF01222813A8003AB693 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				F14F6B23224DFEA9001AA9D3 /* User Header */,
 				F1C50485224CE8D40040B814 /* TextFields */,
 				F1E974FB222D2E7A0027C247 /* HederTitleView */,
 				F1A2DF0D22282065003AB693 /* Cells */,
@@ -289,6 +344,8 @@
 				F1A2DF0B22281BA7003AB693 /* Extension+UiVew.swift */,
 				F18170EF223128470001A593 /* Extension+UiViewController.swift */,
 				F15C9E3B22315BCB008BBCD4 /* Extension+NotificationName.swift */,
+				F14F6B33224E2DE0001AA9D3 /* Extensions+Codable.swift */,
+				F1082259225220B700D575E4 /* Extensions+Decodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,14 +359,6 @@
 				F1E9750E222D71320027C247 /* BirthdayCell */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		F1A2DF1222282659003AB693 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F1A2DF1422282693003AB693 /* RegisterCellModul.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		F1C50480224CE6700040B814 /* Login */ = {
@@ -431,12 +480,15 @@
 				F1A2DEE92227BA1B003AB693 /* LaunchScreen.storyboard in Resources */,
 				F1C50484224CE68D0040B814 /* LoginViewController.xib in Resources */,
 				F1A2DEF12227BCE6003AB693 /* ViewController.xib in Resources */,
+				F14F6B25224DFECA001AA9D3 /* UserHeaderView.xib in Resources */,
 				F1E97501222D2EE20027C247 /* HeaderTitleView.xib in Resources */,
+				F14F6B2C224E25F6001AA9D3 /* CreatePostViewController.xib in Resources */,
 				F1A2DF0622281415003AB693 /* PhotoView.xib in Resources */,
 				F1C5048B224D1CA60040B814 /* GoogleService-Info.plist in Resources */,
 				F1A2DEE62227BA1B003AB693 /* Assets.xcassets in Resources */,
 				F1E97509222D31A80027C247 /* SexTableViewCell.xib in Resources */,
 				F1A2DF11222820AE003AB693 /* UserInfoTableViewCell.xib in Resources */,
+				F14F6B22224DFD64001AA9D3 /* FeedViewController.xib in Resources */,
 				F1A2DF00222812E9003AB693 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +508,7 @@
 				"${BUILT_PRODUCTS_DIR}/ARSLineProgress/ARSLineProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -466,6 +519,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARSLineProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -505,29 +559,37 @@
 			files = (
 				F1E97511222D718B0027C247 /* BirthdayTableViewCell.swift in Sources */,
 				F12351C022366C4700B7C705 /* AuthManager.swift in Sources */,
+				F14F6B27224E00A1001AA9D3 /* UserHeader.swift in Sources */,
 				F1A2DF1922282923003AB693 /* TypeAliases.swift in Sources */,
 				F15C9E3C22315BCB008BBCD4 /* Extension+NotificationName.swift in Sources */,
 				F12351C32236703B00B7C705 /* Utilites.swift in Sources */,
-				F1A2DF1522282693003AB693 /* RegisterCellModul.swift in Sources */,
 				F1E974FF222D2ECE0027C247 /* HeaderTtileView.swift in Sources */,
 				F1A2DF0C22281BA7003AB693 /* Extension+UiVew.swift in Sources */,
 				F1A2DEE12227BA19003AB693 /* ViewController.swift in Sources */,
 				F1A2DEFF222812E9003AB693 /* RegisterViewController.swift in Sources */,
 				F1A2DF10222820AE003AB693 /* UserInfoTableViewCell.swift in Sources */,
+				F14F6B30224E29C1001AA9D3 /* FirebaseManager.swift in Sources */,
+				F14F6B2E224E292D001AA9D3 /* Postmanager.swift in Sources */,
 				F18170EE223125E50001A593 /* Sex.swift in Sources */,
 				F1C50483224CE68D0040B814 /* LoginViewController.swift in Sources */,
 				F1059F33224BBE4200ACC605 /* StoregManager.swift in Sources */,
 				F18170F0223128470001A593 /* Extension+UiViewController.swift in Sources */,
 				F1A2DEF82227C025003AB693 /* Router.swift in Sources */,
 				F1A2DF17222828B4003AB693 /* HeightContainable.swift in Sources */,
+				F14F6B32224E2C4B001AA9D3 /* Post.swift in Sources */,
 				F1E9750B222D506E0027C247 /* CellHeaderProtocol.swift in Sources */,
 				F1A2DF04222813F9003AB693 /* PhotoView.swift in Sources */,
 				F1A2DF0922281452003AB693 /* NibLoadable.swift in Sources */,
+				F14F6B34224E2DE0001AA9D3 /* Extensions+Codable.swift in Sources */,
 				F18170EC223125840001A593 /* RegisterModel.swift in Sources */,
+				F14F6B2B224E25F6001AA9D3 /* CreatePostViewController.swift in Sources */,
 				F1C50487224CE9010040B814 /* CustomTextFields.swift in Sources */,
 				F1A2DEDF2227BA19003AB693 /* AppDelegate.swift in Sources */,
+				F108225A225220B700D575E4 /* Extensions+Decodable.swift in Sources */,
 				F1E97508222D31A80027C247 /* SexTableViewCell.swift in Sources */,
+				F14F6B21224DFD64001AA9D3 /* FeedViewController.swift in Sources */,
 				F1A2DEFB2227D366003AB693 /* StartRouter.swift in Sources */,
+				F14F6B36224E388A001AA9D3 /* SecureStoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -127,7 +127,8 @@ class RegisterViewController: UIViewController {
     navigationItem.rightBarButtonItem = barButton
   }
   
-  @objc private func rightBarButtonClicked(sender: UIBarButtonItem) { 
+  @objc private func rightBarButtonClicked(sender: UIBarButtonItem) {
+    setSexSegmentValue()
     
     guard registerModel.isFilled else {
       
@@ -142,8 +143,17 @@ class RegisterViewController: UIViewController {
       switch result {
       case .failure(let error):
         self.showAlert(with: "Ошибка", and: error.localizedDescription)
-      case .success(let succses):
-        self.showAlert(with:"", and: succses)
+      case .success(_):
+        StartRouter.shared.routerAfterSuccessAuth(from: self)
+        // Все регистрация прошла теперь сохраним данные в секретное хранилище
+        SecureStorageManager.shared.save(email: self.registerModel.email, password: self.registerModel.password, completionHandler: { (result) in
+          switch result {
+          case .failure(let error):
+            self.showAlert(with: "Ошибка защиты данных", and: error.localizedDescription)
+          case .success(_): break
+    
+          }
+        })
       }
       
     }
@@ -243,10 +253,7 @@ class RegisterViewController: UIViewController {
     
     setSexSegmentValue()
     
-    print("Кнопочка")
-    print("Пол - \(String(describing: registerModel.sex?.rawValue))")
-    print("Email - \(registerModel.email) Password - \(registerModel.password)")
-    print("День рождения \(registerModel.birthday)")
+    
     
     
 //    AuthManager.shared.register(with: registerModel) {_ in

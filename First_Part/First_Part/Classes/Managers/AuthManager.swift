@@ -11,35 +11,36 @@ import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
 
-class AuthManager {
+class AuthManager: FirebaseManager {
   
   static let shared = AuthManager()
-  private var currentUser: User?
-  private init() {}
+  var currentUser: User?
+  private override init() {}
   
-  // Корневая ветка в базе данных
-  private var sourceRef: DatabaseReference {
+  func signInIfNeeded() {
+    let credentials = SecureStorageManager.shared.loadEmailAndPassword()
     
-    return Database.database().reference()
+    guard let email = credentials.email, let password = credentials.password else {
+      return
+    }
     
+    signIn(with: email, and: password) { (result) in
+      switch result {
+      case .success(let sucsess):
+        print(sucsess)
+      case .failure(let error):
+        print(error)
+      }
+    }
   }
-  
-  private var userRef: DatabaseReference {
-    
-    return sourceRef.child("users")
-  }
-  
-  private let auth = Auth.auth()
-  
+
   // Метод Авторизации!
-  
   func signIn(with email: String, and password: String, completionHandler: @escaping (Result<String, Error>) -> Void) {
     
     print(email,password)
     
     auth.signIn(withEmail: email, password: password) { (result, error) in
-      
-      print(result)
+
       if let error = error {
         print(error)
         completionHandler(.failure(error))
@@ -52,6 +53,7 @@ class AuthManager {
         }
         self.currentUser = user
         completionHandler(.success("Авторизация прошла успешно!"))
+        
       }
     }
   }
@@ -77,12 +79,17 @@ class AuthManager {
         completition(.failure(error))
         
       } else {
+        
+        guard let res = result else {
+          return
+        }
+        self.currentUser = res.user
         // Успешно создали юзера
         var dict = model.dict
         dict["id"] = id
         
-        self.userRef.child(id).setValue(dict, withCompletionBlock: { (error, reference) in
-          self.addAvatarUrlIFNedeed(for: model)
+        self.userRef.child(res.user.uid).setValue(dict, withCompletionBlock: { (error, reference) in
+          self.addAvatarUrlIFNedeed(for: model, user: res.user)
           
         })
         completition(.success("Регистрация прошла успешно"))
@@ -92,13 +99,13 @@ class AuthManager {
   
   
   
-  func addAvatarUrlIFNedeed(for model: RegisterModel) {
+  func addAvatarUrlIFNedeed(for model: RegisterModel, user: User) {
     
     StoregeManager.shared.loadUrl(for: model) { (url) in
       guard let url = url else {
         return
       }
-      self.userRef.child(model.userID).child("avatarUrl").setValue(url.absoluteString)
+      self.userRef.child(user.uid).child("avatarUrl").setValue(url.absoluteString)
       
       
     }

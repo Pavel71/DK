@@ -24,4 +24,12 @@ final class StartRouter {
     let vc = LoginViewController()
     source.navigationController?.pushViewController(vc, animated: true)
   }
+  
+  
+  func routerAfterSuccessAuth(from source: UIViewController) {
+
+    let vc = Router.shared.startControleerAfterAuth
+    source.present(vc, animated: true, completion: nil)
+    
+  }
 }

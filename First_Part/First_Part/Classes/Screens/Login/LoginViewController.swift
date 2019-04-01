@@ -38,8 +38,9 @@ class LoginViewController: UIViewController {
     
     AuthManager.shared.signIn(with: email, and: password) { (result) in
       switch result {
-      case .success(let str):
-        self.showAlert(with: "Успех", and: str)
+      case .success(_):
+        StartRouter.shared.routerAfterSuccessAuth(from: self)
+        
       case .failure(let error):
         self.showAlert(with: "Ошибка", and: error.localizedDescription)
       }

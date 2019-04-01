@@ -33,13 +33,13 @@ class RegisterModel {
     return [
       "email": email ?? "",
       "password": password ?? "",
-      "sex": sex?.rawValue ,
+      "sex": sex?.rawValue ?? ""  ,
       "birthday": (birthday ?? Date()).timeIntervalSince1970
     ]
   }
   
   init() {
     
-    self.userID = UUID.init().uuidString
+    self.userID = UUID().uuidString
   }
 }

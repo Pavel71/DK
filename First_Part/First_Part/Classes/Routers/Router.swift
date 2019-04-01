@@ -9,16 +9,45 @@
 import UIKit
 
 class Router {
+  
+  static let shared = Router()
+
+  
+  private init() {}
+  
+  var startControleerAfterAuth: UIViewController {
     
-    static let shared = Router()
-    private let rootViewController: UIViewController = ViewController()
+    let createPostVC = CreatePostViewController()
+    let createPostNC = UINavigationController(rootViewController: createPostVC)
+    let createTabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 0)
+    createPostNC.tabBarItem = createTabBarItem
     
-    private init() {}
+    let feedVC = FeedViewController()
+    let feedNC = UINavigationController(rootViewController: feedVC)
+    let feedTabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+    feedNC.tabBarItem = feedTabBarItem
     
-    func root (window: inout UIWindow?) {
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: rootViewController)
-    }
+    
+    
+    let tabBarVC = UITabBarController()
+    tabBarVC.setViewControllers([feedNC, createPostNC], animated: true)
+    
+    return tabBarVC
+  }
+  
+
+  
+  func root (window: inout UIWindow?) {
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.makeKeyAndVisible()
+    
+    let vc = SecureStorageManager.shared.isLoggedIn() ? startControleerAfterAuth : ViewController()
+    
+    print(vc)
+ 
+    window?.rootViewController = UINavigationController(rootViewController: vc)
+  }
+  
+  
+  
 }
