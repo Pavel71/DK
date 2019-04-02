@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedViewController" customModule="First_Part" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="CZo-w6-ZyU" id="tHS-8U-NCw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

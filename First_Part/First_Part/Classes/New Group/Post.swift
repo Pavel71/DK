@@ -11,11 +11,7 @@ import Foundation
 
 class Post: Codable {
   
-  enum `Type`: String, Codable {
-    case text
-    case textAndImage
-    case image
-  }
+
   var id: String
   var type: Type
   var text: String?
@@ -31,5 +27,12 @@ class Post: Codable {
   convenience init(text: String) {
     self.init()
     self.text = text
+  }
+  
+  
+  enum `Type`: String, Codable {
+    case text
+    case textAndImage
+    case image
   }
 }

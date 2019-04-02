@@ -10,6 +10,9 @@
 		4AB43C960A6098584470D282 /* Pods_First_Part.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */; };
 		F1059F33224BBE4200ACC605 /* StoregManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F32224BBE4200ACC605 /* StoregManager.swift */; };
 		F108225A225220B700D575E4 /* Extensions+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1082259225220B700D575E4 /* Extensions+Decodable.swift */; };
+		F108225E2252279B00D575E4 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108225C2252279B00D575E4 /* PostTableViewCell.swift */; };
+		F108225F2252279B00D575E4 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F108225D2252279B00D575E4 /* PostTableViewCell.xib */; };
+		F1082263225387ED00D575E4 /* CreatePostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1082262225387ED00D575E4 /* CreatePostModel.swift */; };
 		F12351C022366C4700B7C705 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12351BF22366C4700B7C705 /* AuthManager.swift */; };
 		F12351C32236703B00B7C705 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12351C22236703B00B7C705 /* Utilites.swift */; };
 		F14F6B21224DFD64001AA9D3 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14F6B1F224DFD64001AA9D3 /* FeedViewController.swift */; };
@@ -63,6 +66,9 @@
 		95E7E54F6239BDC04A81F218 /* Pods_First_Part.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_First_Part.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1059F32224BBE4200ACC605 /* StoregManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoregManager.swift; sourceTree = "<group>"; };
 		F1082259225220B700D575E4 /* Extensions+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Decodable.swift"; sourceTree = "<group>"; };
+		F108225C2252279B00D575E4 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		F108225D2252279B00D575E4 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		F1082262225387ED00D575E4 /* CreatePostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostModel.swift; sourceTree = "<group>"; };
 		F12351BF22366C4700B7C705 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		F12351C22236703B00B7C705 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		F14F6B1F224DFD64001AA9D3 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +147,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F108225B2252273500D575E4 /* PostTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F108225C2252279B00D575E4 /* PostTableViewCell.swift */,
+				F108225D2252279B00D575E4 /* PostTableViewCell.xib */,
+			);
+			path = PostTableViewCell;
+			sourceTree = "<group>";
+		};
 		F12351BD2236449200B7C705 /* TextFieldsCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +216,7 @@
 				F18170EB223125840001A593 /* RegisterModel.swift */,
 				F18170ED223125E50001A593 /* Sex.swift */,
 				F14F6B31224E2C4B001AA9D3 /* Post.swift */,
+				F1082262225387ED00D575E4 /* CreatePostModel.swift */,
 			);
 			name = Models;
 			path = "New Group";
@@ -353,6 +369,7 @@
 		F1A2DF0D22282065003AB693 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F108225B2252273500D575E4 /* PostTableViewCell */,
 				F12351BD2236449200B7C705 /* TextFieldsCell */,
 				F1E9750C222D677E0027C247 /* UserInfoCell */,
 				F1E9750D222D67980027C247 /* SexCell */,
@@ -482,6 +499,7 @@
 				F1A2DEF12227BCE6003AB693 /* ViewController.xib in Resources */,
 				F14F6B25224DFECA001AA9D3 /* UserHeaderView.xib in Resources */,
 				F1E97501222D2EE20027C247 /* HeaderTitleView.xib in Resources */,
+				F108225F2252279B00D575E4 /* PostTableViewCell.xib in Resources */,
 				F14F6B2C224E25F6001AA9D3 /* CreatePostViewController.xib in Resources */,
 				F1A2DF0622281415003AB693 /* PhotoView.xib in Resources */,
 				F1C5048B224D1CA60040B814 /* GoogleService-Info.plist in Resources */,
@@ -557,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1082263225387ED00D575E4 /* CreatePostModel.swift in Sources */,
 				F1E97511222D718B0027C247 /* BirthdayTableViewCell.swift in Sources */,
 				F12351C022366C4700B7C705 /* AuthManager.swift in Sources */,
 				F14F6B27224E00A1001AA9D3 /* UserHeader.swift in Sources */,
@@ -576,6 +595,7 @@
 				F18170F0223128470001A593 /* Extension+UiViewController.swift in Sources */,
 				F1A2DEF82227C025003AB693 /* Router.swift in Sources */,
 				F1A2DF17222828B4003AB693 /* HeightContainable.swift in Sources */,
+				F108225E2252279B00D575E4 /* PostTableViewCell.swift in Sources */,
 				F14F6B32224E2C4B001AA9D3 /* Post.swift in Sources */,
 				F1E9750B222D506E0027C247 /* CellHeaderProtocol.swift in Sources */,
 				F1A2DF04222813F9003AB693 /* PhotoView.swift in Sources */,

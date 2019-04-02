@@ -15,6 +15,15 @@ class Postmanager: FirebaseManager {
   
   static let shared = Postmanager()
   
+  func createPostModel(from user: User, with model: CreatePostModel, completition: @escaping ResultClouser) {
+    
+    guard model.isFiled else {
+      completition(.failure(fatalError("Canot create emty post")))
+      return
+    }
+    createPost(from: user, with: model.text!, completition: completition)
+  }
+  
   func createPost(from user: User, with text: String, completition: @escaping ResultClouser) {
     
     let newPostID = UUID().uuidString
@@ -40,19 +49,30 @@ class Postmanager: FirebaseManager {
     
     userRef.observe(.value) { (snapshot) in
       var result: [Post] = []
-      guard let value = snapshot.value as? [[AnyHashable: Any]] else {
+      
+      // 1. Что если рпинять все данные в виде json и обработать их?
+      // 2. Првильным решением будет создать структуру аналогичную json словарю!
+      
+
+  
+      guard let value = snapshot.value as? [String: [AnyHashable: Any]] else {
         complitition(.failure(fatalError("Post not exists")))
       }
+
       
-      for element in value {
-        if let postDictionaryArray  = (element[Keys.posts] as? [[AnyHashable: Any]]) {
+      let allKeys = value.keys
+      allKeys.forEach({ (key) in
+        if let element = value[key], let postDictionaryArray = (element[Keys.posts.rawValue] as? [String: [AnyHashable: Any]]) {
+
+          
           let posts = postDictionaryArray.compactMap {
-            try? Post.init(from: $0)
+
+            try? Post.init(from: $0.value)
           }
           result.append(contentsOf: posts)
         }
-      }
-      
+      })
+
       complitition(.success(result))
     }
     
