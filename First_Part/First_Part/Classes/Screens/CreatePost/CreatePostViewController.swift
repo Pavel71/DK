@@ -17,7 +17,7 @@ class CreatePostViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    textView.place
+
     textView.becomeFirstResponder()
   }
   

@@ -13,6 +13,14 @@
 		F108225E2252279B00D575E4 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108225C2252279B00D575E4 /* PostTableViewCell.swift */; };
 		F108225F2252279B00D575E4 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F108225D2252279B00D575E4 /* PostTableViewCell.xib */; };
 		F1082263225387ED00D575E4 /* CreatePostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1082262225387ED00D575E4 /* CreatePostModel.swift */; };
+		F108226722539E5300D575E4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108226522539E5300D575E4 /* ChatViewController.swift */; };
+		F108226822539E5300D575E4 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F108226622539E5300D575E4 /* ChatViewController.xib */; };
+		F108226A22539F7C00D575E4 /* Usermanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108226922539F7C00D575E4 /* Usermanager.swift */; };
+		F108226C2253A03000D575E4 /* DKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108226B2253A03000D575E4 /* DKUser.swift */; };
+		F10822702254902D00D575E4 /* ChatOnlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108226E2254902D00D575E4 /* ChatOnlyViewController.swift */; };
+		F10822712254902D00D575E4 /* ChatOnlyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F108226F2254902D00D575E4 /* ChatOnlyViewController.xib */; };
+		F1082273225493D200D575E4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1082272225493D200D575E4 /* Message.swift */; };
+		F10822752254941800D575E4 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10822742254941800D575E4 /* ChatManager.swift */; };
 		F12351C022366C4700B7C705 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12351BF22366C4700B7C705 /* AuthManager.swift */; };
 		F12351C32236703B00B7C705 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12351C22236703B00B7C705 /* Utilites.swift */; };
 		F14F6B21224DFD64001AA9D3 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14F6B1F224DFD64001AA9D3 /* FeedViewController.swift */; };
@@ -69,6 +77,14 @@
 		F108225C2252279B00D575E4 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		F108225D2252279B00D575E4 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		F1082262225387ED00D575E4 /* CreatePostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostModel.swift; sourceTree = "<group>"; };
+		F108226522539E5300D575E4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		F108226622539E5300D575E4 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		F108226922539F7C00D575E4 /* Usermanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usermanager.swift; sourceTree = "<group>"; };
+		F108226B2253A03000D575E4 /* DKUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKUser.swift; sourceTree = "<group>"; };
+		F108226E2254902D00D575E4 /* ChatOnlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatOnlyViewController.swift; sourceTree = "<group>"; };
+		F108226F2254902D00D575E4 /* ChatOnlyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatOnlyViewController.xib; sourceTree = "<group>"; };
+		F1082272225493D200D575E4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F10822742254941800D575E4 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		F12351BF22366C4700B7C705 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		F12351C22236703B00B7C705 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		F14F6B1F224DFD64001AA9D3 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +172,24 @@
 			path = PostTableViewCell;
 			sourceTree = "<group>";
 		};
+		F108226422539E3100D575E4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				F108226522539E5300D575E4 /* ChatViewController.swift */,
+				F108226622539E5300D575E4 /* ChatViewController.xib */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		F108226D2254900C00D575E4 /* ChatUser */ = {
+			isa = PBXGroup;
+			children = (
+				F108226E2254902D00D575E4 /* ChatOnlyViewController.swift */,
+				F108226F2254902D00D575E4 /* ChatOnlyViewController.xib */,
+			);
+			path = ChatUser;
+			sourceTree = "<group>";
+		};
 		F12351BD2236449200B7C705 /* TextFieldsCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +205,8 @@
 				F14F6B2D224E292D001AA9D3 /* Postmanager.swift */,
 				F14F6B2F224E29C0001AA9D3 /* FirebaseManager.swift */,
 				F14F6B35224E388A001AA9D3 /* SecureStoreManager.swift */,
+				F108226922539F7C00D575E4 /* Usermanager.swift */,
+				F10822742254941800D575E4 /* ChatManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -217,6 +253,8 @@
 				F18170ED223125E50001A593 /* Sex.swift */,
 				F14F6B31224E2C4B001AA9D3 /* Post.swift */,
 				F1082262225387ED00D575E4 /* CreatePostModel.swift */,
+				F108226B2253A03000D575E4 /* DKUser.swift */,
+				F1082272225493D200D575E4 /* Message.swift */,
 			);
 			name = Models;
 			path = "New Group";
@@ -264,6 +302,8 @@
 		F1A2DEF32227BF86003AB693 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F108226D2254900C00D575E4 /* ChatUser */,
+				F108226422539E3100D575E4 /* Chat */,
 				F14F6B28224E25D7001AA9D3 /* CreatePost */,
 				F14F6B1E224DFD40001AA9D3 /* Feed */,
 				F1C50480224CE6700040B814 /* Login */,
@@ -499,6 +539,8 @@
 				F1A2DEF12227BCE6003AB693 /* ViewController.xib in Resources */,
 				F14F6B25224DFECA001AA9D3 /* UserHeaderView.xib in Resources */,
 				F1E97501222D2EE20027C247 /* HeaderTitleView.xib in Resources */,
+				F108226822539E5300D575E4 /* ChatViewController.xib in Resources */,
+				F10822712254902D00D575E4 /* ChatOnlyViewController.xib in Resources */,
 				F108225F2252279B00D575E4 /* PostTableViewCell.xib in Resources */,
 				F14F6B2C224E25F6001AA9D3 /* CreatePostViewController.xib in Resources */,
 				F1A2DF0622281415003AB693 /* PhotoView.xib in Resources */,
@@ -575,10 +617,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F108226A22539F7C00D575E4 /* Usermanager.swift in Sources */,
 				F1082263225387ED00D575E4 /* CreatePostModel.swift in Sources */,
 				F1E97511222D718B0027C247 /* BirthdayTableViewCell.swift in Sources */,
 				F12351C022366C4700B7C705 /* AuthManager.swift in Sources */,
 				F14F6B27224E00A1001AA9D3 /* UserHeader.swift in Sources */,
+				F10822702254902D00D575E4 /* ChatOnlyViewController.swift in Sources */,
 				F1A2DF1922282923003AB693 /* TypeAliases.swift in Sources */,
 				F15C9E3C22315BCB008BBCD4 /* Extension+NotificationName.swift in Sources */,
 				F12351C32236703B00B7C705 /* Utilites.swift in Sources */,
@@ -609,6 +653,10 @@
 				F1E97508222D31A80027C247 /* SexTableViewCell.swift in Sources */,
 				F14F6B21224DFD64001AA9D3 /* FeedViewController.swift in Sources */,
 				F1A2DEFB2227D366003AB693 /* StartRouter.swift in Sources */,
+				F108226C2253A03000D575E4 /* DKUser.swift in Sources */,
+				F1082273225493D200D575E4 /* Message.swift in Sources */,
+				F10822752254941800D575E4 /* ChatManager.swift in Sources */,
+				F108226722539E5300D575E4 /* ChatViewController.swift in Sources */,
 				F14F6B36224E388A001AA9D3 /* SecureStoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

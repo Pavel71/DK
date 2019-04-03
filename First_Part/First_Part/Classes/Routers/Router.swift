@@ -27,10 +27,16 @@ class Router {
     let feedTabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
     feedNC.tabBarItem = feedTabBarItem
     
+    let chatsVC = ChatViewController()
+    let chatsNC = UINavigationController.init(rootViewController: chatsVC)
+    let chatsTabbarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+    chatsNC.tabBarItem = chatsTabbarItem
+    
     
     
     let tabBarVC = UITabBarController()
-    tabBarVC.setViewControllers([feedNC, createPostNC], animated: true)
+    tabBarVC.setViewControllers([feedNC, chatsNC, createPostNC], animated: true)
+
     
     return tabBarVC
   }
